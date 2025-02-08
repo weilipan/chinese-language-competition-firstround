@@ -74,6 +74,3 @@ python app.py
 
 ## 貢獻指南
 歡迎提交 Issue 或 Pull Request，以改進本專案。
-
-## License
-本專案採用 MIT License，詳見 `LICENSE` 文件。
