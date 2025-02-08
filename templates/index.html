@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>臺北市113年度國語文競賽抽籤作業</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>臺北市113年度國語文競賽抽籤作業</h1>
+    
+    <div class="group">
+        <h2>字音字形</h2>
+        <ul>
+            <li><a href="{{ url_for('draw_page', page_name='國中字音字形北區') }}" target="_blank">國中北區</a></li>
+            <li><a href="{{ url_for('draw_page', page_name='國中字音字形南區') }}" target="_blank">國中南區</a></li>
+            <li><a href="{{ url_for('draw_page', page_name='高中字音字形北區') }}" target="_blank">高中北區</a></li>
+            <li><a href="{{ url_for('draw_page', page_name='高中字音字形南區') }}" target="_blank">高中南區</a></li>
+        </ul>
+    </div>
+    
+    <div class="group">
+        <h2>作文</h2>
+        <ul>
+            <li><a href="{{ url_for('draw_page', page_name='國中作文北區') }}" target="_blank">國中北區</a></li>
+            <li><a href="{{ url_for('draw_page', page_name='國中作文南區') }}" target="_blank">國中南區</a></li>
+            <li><a href="{{ url_for('draw_page', page_name='高中作文北區') }}" target="_blank">高中北區</a></li>
+            <li><a href="{{ url_for('draw_page', page_name='高中作文南區') }}" target="_blank">高中南區</a></li>
+        </ul>
+    </div>
+    
+    <div class="group">
+        <h2>寫字</h2>
+        <ul>
+            <li><a href="{{ url_for('draw_page', page_name='國中寫字北區') }}" target="_blank">國中北區</a></li>
+            <li><a href="{{ url_for('draw_page', page_name='國中寫字南區') }}" target="_blank">國中南區</a></li>
+            <li><a href="{{ url_for('draw_page', page_name='高中寫字北區') }}" target="_blank">高中北區</a></li>
+            <li><a href="{{ url_for('draw_page', page_name='高中寫字南區') }}" target="_blank">高中南區</a></li>
+        </ul>
+    </div>
+    
+    <div class="group">
+        <h2>演說</h2>
+        <ul>
+            <li><a href="{{ url_for('draw_page', page_name='國中演說北區') }}" target="_blank">國中北區</a></li>
+            <li><a href="{{ url_for('draw_page', page_name='國中演說南區') }}" target="_blank">國中南區</a></li>
+            <li><a href="{{ url_for('draw_page', page_name='高中演說北區') }}" target="_blank">高中北區</a></li>
+            <li><a href="{{ url_for('draw_page', page_name='高中演說南區') }}" target="_blank">高中南區</a></li>
+        </ul>
+    </div>
+    
+    <div class="group">
+        <h2>朗讀</h2>
+        <ul>
+            <li><a href="{{ url_for('draw_page', page_name='國中朗讀北區') }}" target="_blank">國中北區</a></li>
+            <li><a href="{{ url_for('draw_page', page_name='國中朗讀南區') }}" target="_blank">國中南區</a></li>
+            <li><a href="{{ url_for('draw_page', page_name='高中朗讀北區') }}" target="_blank">高中北區</a></li>
+            <li><a href="{{ url_for('draw_page', page_name='高中朗讀南區') }}" target="_blank">高中南區</a></li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        ::2024 建中圖書館::開發除錯 潘威歷主任::測試 黎駿朋實習教師::
+    </div>
+
+</body>
+</html>

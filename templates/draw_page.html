@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>{{ title }}</h1>
+
+    <!-- 第一階段抽籤結果表格 -->
+    <table border="1" id="resultTable">
+        <thead>
+            <tr>
+                <th>序位</th>
+                <th>姓名</th>
+                <th>學校</th>
+                <th>參加項目</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row['序位'] }}</td>
+                <td class="name">{{ row['姓名'] }}</td>
+                <td>{{ row['學校'] }}</td>
+                <td>{{ row['參加項目'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- 第二階段選手名單 -->
+    <h2 id="secondStageTitle">第二階段選手名單（不納入抽籤）</h2>
+    <table border="1" id="secondStageTable">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>學校</th>
+                <th>參加項目</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in second_stage_data %}
+            <tr>
+                <td>{{ row['姓名'] }}</td>
+                <td>{{ row['學校'] }}</td>
+                <td>{{ row['參加項目'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- 抽籤按鈕 -->
+    <button id="drawButton" class="center">{{ draw_button_text }}</button>
+    
+    <!-- 隱藏列印PDF按钮，抽籤結束後顯示 -->
+    <div class="action-buttons" id="pdfPrintButtonContainer" style="display:none; justify-content: center; margin-top: 20px;">
+        <button id="pdfLink">列印PDF</button>
+    </div>
+
+    <div class="footer">
+        ::2024 建中圖書館::開發除錯 潘威歷主任::
+    </div>
+
+    <script>
+        let drawCount = 1;
+        
+        // 抽籤按鈕功能
+        document.getElementById('drawButton').onclick = function() {
+            // 隱藏第二階段名單
+            document.getElementById('secondStageTitle').style.display = 'none';
+            document.getElementById('secondStageTable').style.display = 'none';
+
+            fetch(`/draw/{{ page_name }}/` + drawCount)
+                .then(response => response.json())
+                .then(data => {
+                    let tbody = document.querySelector('#resultTable tbody');
+                    tbody.innerHTML = '';
+                    data.forEach(row => {
+                        let tr = document.createElement('tr');
+                        tr.innerHTML = `<td>${row['序位']}</td><td class="name">${row['姓名']}</td><td>${row['學校']}</td><td>${row['參加項目']}</td>`;
+                        tbody.appendChild(tr);
+                    });
+                    if (drawCount < 3) {
+                        drawCount++;
+                        document.getElementById('drawButton').textContent = `第${drawCount}次抽籤`;
+                    } else {
+                        // 第三次抽籤完成后，隐藏抽籤按钮并显示列印PDF按钮
+                        document.getElementById('drawButton').style.display = 'none';
+                        document.getElementById('pdfPrintButtonContainer').style.display = 'flex';
+                        // 修改頁面標題
+                        document.title = "113年度臺北市國語文競賽-{{ page_name }}抽籤結果";
+                        document.querySelector('h1').textContent = "113年度臺北市國語文競賽-{{ page_name }}抽籤結果";
+                    }
+                });
+        };
+
+        // 列印PDF按鈕功能
+        document.getElementById('pdfLink').onclick = function() {
+            let nameCells = document.querySelectorAll('.name');
+            nameCells.forEach(function(cell) {
+                let name = cell.textContent;
+                if (name.length === 2) {
+                    // 如果名字長度為兩個字，則替換第二個字為 "O"
+                    let modifiedName = name[0] + 'O';
+                    cell.textContent = modifiedName;
+                } else if (name.length > 2) {
+                    // 如果名字長度大於兩個字，則只保留頭尾兩個字，其他中間的字替換為 "O"
+                    let modifiedName = name[0] + 'O'.repeat(name.length - 2) + name[name.length - 1];
+                    cell.textContent = modifiedName;
+                }
+            });
+            // 開始列印
+            window.print();
+        };
+    </script>
+</body>
+</html>

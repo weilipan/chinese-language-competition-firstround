@@ -1,0 +1,148 @@
+/* 整體樣式 */
+body {
+    font-family: 'SF Pro Display', 'Noto Sans TC', sans-serif; /* 使用蘋果的標準字體 */
+    font-size: 18px;
+    color: #333333; /* 使用較柔和的深灰色文字 */
+    background-color: #FFFFFF; /* 極簡白色背景 */
+    padding: 20px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* 標題樣式 */
+h1 {
+    text-align: center;
+    font-size: 36px; /* 較大標題字體 */
+    color: #111111; /* 深灰幾近黑色，突出標題 */
+    margin-bottom: 40px;
+    font-weight: 600; /* 更加突出 */
+    padding-bottom: 10px;
+    border-bottom: 1px solid #DDDDDD; /* 淡灰分隔線 */
+}
+
+/* 群組樣式 */
+.group {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.group h2 {
+    font-size: 22px;
+    color: #222222;
+    margin-bottom: 15px;
+    font-weight: 500 bold;
+}
+
+.group ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style-type: none;
+}
+
+.group ul li {
+    margin: 0 15px;
+}
+
+/* 連結樣式 */
+.group ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    color: #007AFF; /* 蘋果系統常用的藍色 */
+    padding: 12px 24px;
+    background-color: #F2F2F2;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px; /* 柔和圓角 */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.group ul li a:hover {
+    background-color: #E5E5E5; /* 輕微變亮效果 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 淡淡的陰影 */
+}
+
+/* 表格樣式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #F9F9F9;
+    border: 1px solid #DDDDDD;
+    border-radius: 10px; /* 蘋果風圓角 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 柔和陰影 */
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    font-size: 24px; /* 稍微縮小字體以增加清晰度 */
+    font-weight: 500 bold;
+}
+
+th {
+    background-color: #F1F1F1;
+    color: #333333;
+    border-bottom: 2px solid #CCCCCC;
+}
+
+td {
+    border-bottom: 1px solid #DDDDDD;
+    color: #555555;
+}
+
+/* 按鈕樣式 */
+button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #007AFF; /* 蘋果系統藍 */
+    border: none;
+    color: white;
+    border-radius: 8px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #005BB5; /* 更深的藍色 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 輕微陰影效果 */
+}
+
+button.center {
+    display: block;
+    margin: 20px auto;
+}
+
+/* 連結樣式 */
+a#downloadLink, a#pdfLink {
+    font-size: 18px;
+    color: #007AFF;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #F2F2F2;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+a#downloadLink:hover, a#pdfLink:hover {
+    background-color: #E5E5E5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 按鈕容器 */
+.action-buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* 宣告區域 */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 12px;
+    color: #999999;
+}

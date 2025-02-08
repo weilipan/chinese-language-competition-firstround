@@ -1,0 +1,135 @@
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 18px;
+    color: #4E4E4E;
+    background-color: #FAF3E0;
+    padding: 20px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #3E3E3E;
+    margin-bottom: 40px;
+    font-family: 'Noto Sans TC', sans-serif;
+    border-bottom: 2px solid #8B4513;
+    padding-bottom: 10px;
+}
+
+.group {
+    margin-bottom: 50px; /* 增加每個群組之間的距離 */
+    text-align: center;
+}
+
+.group h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.group ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style-type: none;
+}
+
+.group ul li {
+    margin: 0 15px;
+}
+
+.group ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #4E4E4E;
+    padding: 10px 20px;
+    background-color: #FFF8DC;
+    border: 2px solid #8B4513;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.group ul li a:hover {
+    background-color: #F5DEB3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #FFF8DC;
+    border: 1px solid #8B4513;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+th {
+    background-color: #F5DEB3;
+    border-bottom: 2px solid #8B4513;
+}
+
+td {
+    border-bottom: 1px solid #8B4513;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #FFF8DC;
+    border: 2px solid #8B4513;
+    border-radius: 5px;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+button:hover {
+    background-color: #F5DEB3;
+}
+
+button.center {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+
+a#downloadLink, a#pdfLink {
+    font-size: 18px;
+    color: #4E4E4E;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #FFF8DC;
+    border: 2px solid #8B4513;
+    border-radius: 5px;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+a#downloadLink:hover, a#pdfLink:hover {
+    background-color: #F5DEB3;
+}
+
+.action-buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* 宣告區域 */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 12px;
+    color: #666;
+}
