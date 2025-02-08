@@ -13,7 +13,7 @@
 
 ### 1. 克隆此專案
 ```bash
-git clone https://github.com/你的GitHub帳號/your-repo-name.git
+git clone https://github.com/weilipan/chinese-language-competition-firstround.git
 cd your-repo-name
 ```
 
@@ -55,7 +55,7 @@ python app.py
 ## 主要功能說明
 
 ### **首頁 (`index.html`)**
-- 提供組別以list資料夾為主來製作的抽籤連結。
+- 提供組別以list資料夾內的Excel檔（檔案內容請依照欄位自行更新）來製作的抽籤連結。
 - 點擊對應連結後，進入該組別的抽籤頁面
 
 ### **抽籤頁面 (`draw_page.html`)**
